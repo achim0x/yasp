@@ -1,0 +1,40 @@
+@startuml usecases
+!theme materia
+'possible themes: materia, mars, _none_, reddress-lightblue, spacelab
+
+scale 1.2
+
+left to right direction
+
+title Main use cases
+
+actor User as user
+
+rectangle Application {
+  usecase "Update Database" as updateDB
+  usecase "Update all elements" as updateAll
+  usecase "Update single element" as updateElement
+  usecase "Read field configuration" as readFieldConfig
+  usecase "Visualistaion of stock information" as visualisation
+  usecase "Show all stocks" as showAll
+  usecase "Show filtered stocks" as showFiltered
+  usecase "Read filter configuration" as readFilter
+  usecase "Color Coding" as colorCoding
+  usecase "Read Color Codiing filter" as ccFilter
+}
+
+user -- updateDB
+user -- visualisation
+
+
+updateAll ..> updateDB : extend
+updateElement ..> updateAll : include
+updateElement ..> updateDB : include
+readFieldConfig ..> updateDB : include
+showAll ..> visualisation : extend
+showFiltered ..> visualisation : extend
+readFilter ..> showFiltered : include
+colorCoding ..> showAll : include
+ccFilter ..> colorCoding: include
+colorCoding ..> showFiltered : include
+@enduml
