@@ -6,7 +6,6 @@ package db_handler {
         -apiKey:String
         +__init__()
         +add_isin()
-        +add_symbol()
         +get_all(filter)
         +get_watchlist(filter)
         +get_entry(isin, filter)
