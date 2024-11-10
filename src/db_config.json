@@ -1,0 +1,20 @@
+{
+    "id": "INTEGER PRIMARY KEY AUTOINCREMENT",
+    "isin": "TEXT UNIQUE",
+    "symbol": "TEXT",
+    "watchlist": "TEXT",
+    "company": "TEXT",
+    "description": "TEXT",
+    "sector": "TEXT",
+    "subsector": "TEXT",
+    "tradeLink": "TEXT",
+    "chartLink": "TEXT",
+    "price": "REAL",
+    "performance_week": "REAL",
+    "lastUpdate": "TEXT",
+    "peRatioTTM": "REAL",
+    "pfcfRatioTTM": "REAL",
+    "researchAndDevelopementToRevenueTTM": "REAL",
+    "gd20": "REAL",
+    "gd200": "REAL"
+}

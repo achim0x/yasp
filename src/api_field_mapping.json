@@ -1,0 +1,62 @@
+{
+    "search_isin": {
+        "base_url": "https://financialmodelingprep.com/api/v4/search/isin",
+        "first_entry": 0,
+        "search_param": "isin",
+        "default_params":{},
+        "mapping":{
+            "isin": "isin",
+            "companyName": "company",
+            "symbol": "symbol",
+            "description": "description",
+            "sector": "sector",
+            "industry": "subsector"
+        }
+    },
+    "price": {
+        "base_url": "https://financialmodelingprep.com/api/v3/quote-short/",
+        "first_entry": 0,
+        "search_param": "",
+        "default_params":{},
+        "mapping":{
+            "price": "price"
+        }
+    },
+    "key_metrics_ttm": {
+        "base_url": "https://financialmodelingprep.com/api/v3/key-metrics-ttm/",
+        "first_entry": 0,
+        "search_param": "",
+        "default_params":{},
+        "mapping":{
+            "peRatioTTM": "peRatioTTM",
+            "pfcfRatioTTM": "pfcfRatioTTM",
+            "researchAndDevelopementToRevenueTTM": "researchAndDevelopementToRevenueTTM"
+        }
+    },
+    "gd20": {
+        "base_url": "https://financialmodelingprep.com/api/v3/technical_indicator/1day/",
+        "first_entry": 0,
+        "search_param": "",
+        "default_params":{
+            "type": "sma",
+            "period": "20",
+            "limit": "5"
+        },
+        "mapping":{
+            "sma": "gd20"
+        }
+    },
+    "gd200": {
+        "base_url": "https://financialmodelingprep.com/api/v3/technical_indicator/1day/",
+        "first_entry": 0,
+        "search_param": "",
+        "default_params":{
+            "type": "sma",
+            "period": "200",
+            "limit": "5"
+        },
+        "mapping":{
+            "sma": "gd200"
+        }
+    }
+}
