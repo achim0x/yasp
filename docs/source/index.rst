@@ -18,6 +18,8 @@ documentation for details.
 
    user_def_link
 
+.. mermaid:: ./test.mmd
+
 Indices and tables
 ==================
 
