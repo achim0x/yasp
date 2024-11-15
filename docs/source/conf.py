@@ -20,7 +20,7 @@ release = 'V0.1.0'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon', 'sphinx.ext.todo',
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon', 'sphinx.ext.todo', 'sphinxcontrib.mermaid',
               'sphinx.ext.viewcode', 'sphinx.ext.githubpages', 'sphinx.ext.autosummary']
 
 templates_path = ['_templates']
