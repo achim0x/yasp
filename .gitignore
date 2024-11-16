@@ -13,7 +13,10 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+_autosummary
 build/
+_build/
+_sw-architecture
 develop-eggs/
 dist/
 downloads/

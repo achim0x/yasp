@@ -1,0 +1,7 @@
+{
+    "pylint.args": [
+        "\"pylint.args\":[\"--rcfile=.pylintrc\"]"
+    ],
+    "editor.defaultFormatter": "ms-python.autopep8",
+    "editor.formatOnSave": true
+}

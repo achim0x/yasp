@@ -10,7 +10,15 @@ Add your content using ``reStructuredText`` syntax. See the
 `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
 documentation for details.
 
+Software Architecture
+-------------------------
+.. toctree::
+   :maxdepth: 2
 
+   _sw-architecture/README.md
+
+Software Detailed Design
+------------------------
 .. autosummary::
    :toctree: _autosummary
    :template: custom-module-template.rst
@@ -18,23 +26,6 @@ documentation for details.
 
    user_def_link
    db_handler
-   test_db_handler
-
-.. mermaid:: ./test.mmd
-
-.. mermaid::
-
-   sequenceDiagram
-      participant Alice
-      participant Bob
-      Alice->John: Hello John, how are you?
-      loop Healthcheck
-          John->John: Fight against hypochondria
-      end
-      Note right of John: Rational thoughts <br/>prevail...
-      John-->Alice: Great!
-      John->Bob: How about you?
-      Bob-->John: Jolly good!
 
 Indices and tables
 ==================
@@ -42,3 +33,10 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+License information
+===================
+.. toctree::
+   :maxdepth: 2
+
+   license_include
