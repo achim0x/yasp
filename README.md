@@ -7,9 +7,18 @@ Disclaimer: No responsibility is taken for the accuracy of the information displ
 [![License](https://img.shields.io/badge/license-gpl-3.svg)](https://choosealicense.com/licenses/gpl-3.0/) [![Repo Status](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 
 ## Installation
-* Install dependencies according to requirements.txt
-* Register at [financialmodelingprep.com](https://site.financialmodelingprep.com/) to get an API key
-* Store the API key in the environment variable FMP_API: `export FMP_API=your-api-key`
+- Install dependencies according to requirements.txt
+- Register at [financialmodelingprep.com](https://site.financialmodelingprep.com/) to get an API key
+- Store the API key in the environment variable FMP_API: `export FMP_API=your-api-key`
+- In VSCode this also can be done in settings.json:
+  ```
+  "terminal.integrated.env.osx": {
+    "FMP_API":"your-api-key"
+    },
+   "terminal.integrated.env.windows": {
+    "FMP_API":"your-api-key"
+    },
+    ```
 
 ## Usage
 TBD
