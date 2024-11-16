@@ -17,6 +17,8 @@ documentation for details.
    :recursive:
 
    user_def_link
+   db_handler
+   test_db_handler
 
 .. mermaid:: ./test.mmd
 

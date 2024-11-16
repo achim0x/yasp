@@ -23,6 +23,7 @@ The following diagram show the main usecases of this project
 ### Class Diagram
 
 The following show the main structure of the project
+
 ![classes](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/achim0x/yasp/master/docs/diagrams/src/classes.iuml&fmt=svg)
 
 ### Detailed Documentation
