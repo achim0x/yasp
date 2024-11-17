@@ -27,6 +27,15 @@ Software Detailed Design
    user_def_link
    db_handler
 
+Unit Tests
+------------------------
+.. autosummary::
+   :toctree: _autosummary
+   :template: custom-module-template.rst
+   :recursive:
+
+   test_empty
+
 Indices and tables
 ==================
 

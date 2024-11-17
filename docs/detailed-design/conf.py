@@ -8,6 +8,7 @@ import sys
 
 # Customize to your source code location
 sys.path.insert(0, os.path.abspath('../../src/yasp_dbHandler'))
+sys.path.insert(0, os.path.abspath('../../tests'))
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
