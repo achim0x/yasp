@@ -5,9 +5,10 @@
 
 import os
 import sys
+import shutil
 
 # Customize to your source code location
-sys.path.insert(0, os.path.abspath('../../src/yasp_dbHandler'))
+sys.path.insert(0, os.path.abspath('../../src'))
 sys.path.insert(0, os.path.abspath('../../tests'))
 
 # Copy SW Architcture to location for import in Detailed Design

@@ -4,7 +4,7 @@ The idea of this tool is to support hobby investors in finding promising stocks.
 
 Disclaimer: No responsibility is taken for the accuracy of the information displayed. Anyone using the tool is responsible for verifying the data with an independent source.
 
-[![License](https://img.shields.io/badge/license-gpl-3.svg)](https://choosealicense.com/licenses/gpl-3.0/) [![Repo Status](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![License](https://img.shields.io/badge/license-bsd-3.svg)](https://choosealicense.com/licenses/bsd-3-clause/) [![Repo Status](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip) 
 
 - [Overview](#overview)
 - [Installation](#installation)
@@ -18,6 +18,10 @@ Disclaimer: No responsibility is taken for the accuracy of the information displ
 >TODO
 
 More information on the deployment and architecture can be found in the [documentation](./doc/README.md)
+
+For Detailed Software Design run `$ /doc/detailed-design/make html` to generate the detailed design documentation that then can be found
+in the folder `/doc/detailed-design/_build/html/index.html`
+
 ## Installation
 >TODO
 ```cmd
@@ -39,6 +43,7 @@ pip install .
     ```
 
 ## Usage
+
 >TODO
 ```cmd
 example [-h] [-v] {command} {command_options}
@@ -59,7 +64,7 @@ The following show the main structure of the project
 See docs folder
 
 ## Dependencies
-See requirements.txt
+see [requirements.txt](requirements.txt)
 
 ## Issues, Ideas And Bugs
 
@@ -67,7 +72,7 @@ If you have further ideas or you found some bugs, great! Create an [issue](https
 
 ## License
 
-The whole source code is published under [GPL3.0](https://github.com/achim0x/yasp/blob/main/LICENSE).
+The whole source code is published under [BSD-3-Clause](https://github.com/achim0x/yasp/blob/main/LICENSE).
 Consider the different licenses of the used third party libraries too!
 
 ## Contribution
