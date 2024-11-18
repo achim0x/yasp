@@ -6,7 +6,25 @@ Disclaimer: No responsibility is taken for the accuracy of the information displ
 
 [![License](https://img.shields.io/badge/license-gpl-3.svg)](https://choosealicense.com/licenses/gpl-3.0/) [![Repo Status](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 
+- [Overview](#overview)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Examples](#examples)
+- [Issues, Ideas And Bugs](#issues-ideas-and-bugs)
+- [License](#license)
+- [Contribution](#contribution)
+
+## Overview
+>TODO
+
+More information on the deployment and architecture can be found in the [documentation](./doc/README.md)
 ## Installation
+>TODO
+```cmd
+git clone https://github.com/achim0x/yasp.git
+cd yasp
+pip install .
+```
 - Install dependencies according to requirements.txt
 - Register at [financialmodelingprep.com](https://site.financialmodelingprep.com/) to get an API key
 - Store the API key in the environment variable FMP_API: `export FMP_API=your-api-key`
@@ -21,8 +39,10 @@ Disclaimer: No responsibility is taken for the accuracy of the information displ
     ```
 
 ## Usage
-TBD
-
+>TODO
+```cmd
+example [-h] [-v] {command} {command_options}
+```
 ## General Concept
 ### Main Use Cases
 
