@@ -2,12 +2,6 @@
 
 pushd %~dp0
 
-REM Copy SW Architecture to include location
-if not exist "_sw-architecture" (
-	mkdir "_sw-architecture"
-)
-copy "..\*.md" ".\_sw-architecture\" /Y
-
 REM Command file for Sphinx documentation
 
 if "%SPHINXBUILD%" == "" (

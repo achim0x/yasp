@@ -10,11 +10,23 @@ import sys
 sys.path.insert(0, os.path.abspath('../../src/yasp_dbHandler'))
 sys.path.insert(0, os.path.abspath('../../tests'))
 
+# Copy SW Architcture to location for import in Detailed Design
+sw_arch_incl_dir = '_sw-architecture'  # destination folder
+sw_arch_src_dir = '../'  # source folder
+if not os.path.exists(sw_arch_incl_dir):
+    os.makedirs(sw_arch_incl_dir)
+files_in_doc = os.listdir(sw_arch_src_dir)
+for file_name in files_in_doc:
+    if file_name.endswith('.md'):
+        shutil.copy(sw_arch_src_dir + file_name, sw_arch_incl_dir)
+        print('copy SW Architecture file to include directory:',
+              sw_arch_src_dir + file_name, ' to:', sw_arch_incl_dir)
+
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'YASP - Yet another Stock Performance Analysis'
-copyright = '2024, Achim Brunner'
+copyright = '(c) 2024, Achim Brunner'
 author = 'Achim Brunner'
 release = 'V0.1.0'
 version = release
@@ -28,16 +40,12 @@ extensions = ['sphinx.ext.autodoc',  # extension for python docstring
               'sphinx.ext.viewcode',  # view code in documentation
               'sphinx.ext.autosummary',  # crawls python files to extract content
               'sphinxcontrib.plantuml',  # plantuml support
-              'myst_parser',  # markdown support
-              'sphinx.ext.todo']  # support todo lists
+              'myst_parser']  # markdown support
 
 source_suffix = {
     ".rst": "restructuredtext",
     ".md": "markdown",
 }
-
-# Display todos by setting to True
-todo_include_todos = True
 
 # Add path to your local plantuml jar file here. Latest Version can be downloaded here:
 # https://plantuml.com/de/download
