@@ -78,6 +78,8 @@ instance/
 
 # Sphinx documentation
 docs/_build/
+_pylint.tmp
+pylint.rst
 
 # PyBuilder
 .pybuilder/
