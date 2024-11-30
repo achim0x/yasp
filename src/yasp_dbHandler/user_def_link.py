@@ -3,10 +3,6 @@
 Provide User defined Links to external providers for Charts and Trading
 """
 
-import json
-import time
-import requests
-
 
 def get_trading_link(isin: str):
     """
@@ -22,8 +18,9 @@ def get_trading_link(isin: str):
         str: Link to trading platform for provided ISIN
     """
     trading_url = None
-    #if isin:
-        #put your implementation here
+    print(isin)
+    # if isin:
+    # put your implementation here
     return trading_url
 
 
@@ -41,6 +38,7 @@ def get_chart_link(isin: str):
         str: Link to chart for provided ISIN
     """
     chart_info = None
-    #if isin:
-        #put your implementation here
+    print(isin)
+    # if isin:
+    # put your implementation here
     return chart_info
