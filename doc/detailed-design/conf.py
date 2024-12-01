@@ -6,7 +6,7 @@
 import os
 import sys
 sys.path.append(os.path.relpath('./'))
-import update_doc_from_src as update_doc
+import update_doc_from_src as update_doc  # NOQA pylint: disable=C0413
 
 # Customize to your source code location
 sys.path.insert(0, os.path.abspath('../../src'))
