@@ -1,7 +1,6 @@
 {
-    "pylint.args": [
-        "\"pylint.args\":[\"--rcfile=.pylintrc\"]"
-    ],
     "editor.defaultFormatter": "ms-python.autopep8",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "plantuml.render": "Local",
+    "plantuml.server": "https://www.plantuml.com/plantuml"
 }

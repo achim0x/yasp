@@ -27,19 +27,17 @@ jobs:
     # The type of runner that the job will run on.
     runs-on: ubuntu-latest
     needs: intro
-    strategy:
-      matrix:
-        python-version: ["3.9", "3.12"]
 
     # Steps represent a sequence of tasks that will be executed as part of the job.
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: '3.12'
+          cache: pip
 
       - name: Install dependencies
         run: |
@@ -55,19 +53,16 @@ jobs:
     # The type of runner that the job will run on.
     runs-on: ubuntu-latest
     needs: intro
-    strategy:
-      matrix:
-        python-version: ["3.9", "3.12"]
 
     # Steps represent a sequence of tasks that will be executed as part of the job.
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: '3.12'
 
       - name: Install dependencies
         run: |

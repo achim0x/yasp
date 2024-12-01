@@ -5,29 +5,33 @@
 
 import os
 import sys
-import shutil
+sys.path.append(os.path.relpath('./'))
+import update_doc_from_src as update_doc  # NOQA pylint: disable=C0413
 
 # Customize to your source code location
 sys.path.insert(0, os.path.abspath('../../src'))
 sys.path.insert(0, os.path.abspath('../../tests'))
 
+# Update Overview from ./README
+update_doc.update_overview()
+
 # Copy SW Architcture to location for import in Detailed Design
-sw_arch_incl_dir = '_sw-architecture'  # destination folder
-sw_arch_src_dir = '../'  # source folder
-if not os.path.exists(sw_arch_incl_dir):
-    os.makedirs(sw_arch_incl_dir)
-files_in_doc = os.listdir(sw_arch_src_dir)
-for file_name in files_in_doc:
-    if file_name.endswith('.md'):
-        shutil.copy(sw_arch_src_dir + file_name, sw_arch_incl_dir)
-        print('copy SW Architecture file to include directory:',
-              sw_arch_src_dir + file_name, ' to:', sw_arch_incl_dir)
+update_doc.update_architecture()
+
+# Find Python source files and add them to according autosummary section
+update_doc.update_source()
+
+# Find Unit-Test files and add them to according autosummary section
+update_doc.update_unittest()
+
+# run pyLint to include results in documentation
+update_doc.update_pylint()
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'YASP - Yet another Stock Performance Analysis'
-copyright = '(c) 2024, Achim Brunner'
+copyright = '%Y, Achim Brunner'
 author = 'Achim Brunner'
 release = 'V0.1.0'
 version = release

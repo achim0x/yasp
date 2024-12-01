@@ -7,6 +7,6 @@ sphinx-rtd-theme>=3.0.1
 pyinstaller>=6.11.1
 pytest>=8.3.3
 pytest-cov>=6.0.0
-pipreqs>=0.4.13
 myst-parser>=4.0.0
 sphinxcontrib-plantuml>=0.30
+m2r>=0.3.1
