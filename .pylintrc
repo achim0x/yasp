@@ -8,6 +8,7 @@
 
 
 [MAIN]
+init-hook='import sys; sys.path.append("/src/yasp_db_handler")'
 
 # Files or directories to be skipped. They should be base names, not paths.
 ignore=

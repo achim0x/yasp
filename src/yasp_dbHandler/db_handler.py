@@ -58,8 +58,7 @@ class DbHandler:
         logger.info("DbHandler initialized with dbFile: %s", db_file)
         self._api_key = os.getenv("FMP_API")
         if not self._api_key:
-            raise EnvironmentError(
-                "Environment variable FMP_API for API Key not defined")
+            raise EnvironmentError("Environment variable FMP_API for API Key not defined")
 
     def _load_config(self, config_file: str) -> Dict:
         """
@@ -110,8 +109,7 @@ class DbHandler:
         with self._connection:
             cursor = self._connection.cursor()
             # Execute a query to check if the table exists
-            cursor.execute(
-                "SELECT name FROM sqlite_master WHERE type='table' AND name='stocks';")
+            cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='stocks';")
             result = cursor.fetchone()  # Fetch one result, if exists
 
         if result:
@@ -126,11 +124,9 @@ class DbHandler:
                         if entry == column[1]:
                             entry_exists = 1
                     if 0 == entry_exists:
-                        add_sql = f"alter table stocks add column {
-                            entry} {self._db_config[entry]}"
+                        add_sql = f"alter table stocks add column {entry} {self._db_config[entry]}"
                         cursor.execute(add_sql)
-                        logger.info(
-                            'create new db entry for: %s with type %s', entry, self._db_config[entry])
+                        logger.info('create new db entry for: %s with type %s', entry, self._db_config[entry])
         else:
             field_definitions = ""
             for entry in self._db_config:
@@ -139,11 +135,9 @@ class DbHandler:
             field_definitions = field_definitions[:-1]
 
             with self._connection:
-                create_table_query = f"create table if not exists stocks ({
-                    field_definitions})"
+                create_table_query = f"create table if not exists stocks ({field_definitions})"
                 self._connection.execute(create_table_query)
-                logger.info(
-                    "Table stocks initialized with fields: %s", field_definitions)
+                logger.info("Table stocks initialized with fields: %s", field_definitions)
 
     def _check_config(self):
         """
@@ -169,26 +163,22 @@ class DbHandler:
         if self._field_mapping[api_name]["search_param"]:
             request_url = self._field_mapping[api_name]["base_url"]
             request_params = self._field_mapping[api_name]["default_params"]
-            request_params[self._field_mapping[api_name]
-                           ["search_param"]] = search_value
+            request_params[self._field_mapping[api_name]["search_param"]] = search_value
         else:
             request_url = self._field_mapping[api_name]["base_url"] + search_value
             request_params = self._field_mapping[api_name]["default_params"]
 
-        logger.debug("API Request: %s with params: %s",
-                     request_url, request_params)
+        logger.debug("API Request: %s with params: %s", request_url, request_params)
 
         request_params["apikey"] = self._api_key
-        response = requests.get(
-            request_url, params=request_params, timeout=30).content
+        response = requests.get(request_url, params=request_params, timeout=30).content
         json_data = json.loads(response)
 
         # Check mapping config and try to assign response values to maped field
         mapped_data = {}
         for api_field in self._field_mapping[api_name]['mapping']:
             mapped_data[self._field_mapping[api_name]['mapping'][api_field]] = \
-                json_data[self._field_mapping[api_name]
-                          ["first_entry"]][api_field]
+                json_data[self._field_mapping[api_name]["first_entry"]][api_field]
         print(mapped_data)
 
         return mapped_data
@@ -215,13 +205,11 @@ class DbHandler:
                 values = tuple(data_dict.values())
 
                 # Construct and execute the SQL query
-                sql_query = f"INSERT INTO {
-                    table_name} ({columns}) VALUES ({placeholders})"
+                sql_query = f"INSERT INTO {table_name} ({columns}) VALUES ({placeholders})"
                 cursor.execute(sql_query, values)
                 self._connection.commit()
 
-                logger.debug(
-                    "Insert data to table: %s with query: %s, values: %s", table_name, sql_query, values)
+                logger.debug("Insert data to table: %s with query: %s, values: %s", table_name, sql_query, values)
         except sqlite3.DatabaseError as e:
             logger.error("Database error: %s", str(e))
             raise
@@ -241,9 +229,7 @@ class DbHandler:
         stock_data = self._map_api_data_to_db_fields("search_isin", isin)
         self._insert_dict_into_table("stocks", stock_data)
 
-    def get_all(
-        self, filter_str: Optional[Dict[str, str]] = None
-    ) -> List[Dict[str, Any]]:
+    def get_all(self, filter_str: Optional[Dict[str, str]] = None) -> List[Dict[str, Any]]:
         """
         Retrieves all entries from the database, optionally applying filters.
 
@@ -255,9 +241,7 @@ class DbHandler:
             List[Dict[str, Any]]: A list of dictionaries representing the database entries.
         """
 
-    def get_watchlist(
-        self, filter_str: Optional[Dict[str, str]] = None
-    ) -> List[Dict[str, Any]]:
+    def get_watchlist(self, filter_str: Optional[Dict[str, str]] = None) -> List[Dict[str, Any]]:
         """
         Retrieves all entries that are currently in the watchlist, optionally applying filters.
 
